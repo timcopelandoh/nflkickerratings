@@ -36,6 +36,8 @@ def loadkickdata(filepath):
 	kicks['Date'] = kicks['Date'].apply(convert_date)
 	kicks['Dist_sq'] = kicks['Dist'].apply(lambda x: x**2)
 	kicks['Season'] = kicks['Date'].apply(lambda x: x.year)
+	kicks['Month'] = kicks['Date'].apply(lambda x: x.month)
+	kicks['Constant'] = 1
 	return kicks
 
 	# Create variable for distance squared
