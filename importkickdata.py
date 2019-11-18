@@ -23,6 +23,9 @@ def loadkickdata(filepath):
 	# Isolate unique player id
 	kicks['PlayerID'] = kicks['Player'].apply(lambda x: str.split(x, '\\')[1])
 
+	# And player name
+	kicks['Player name'] = kicks['Player'].apply(lambda x: str.split(x, '\\')[0])
+
 	# Create variable for team whose stadium the game is played at
 	kicks['Stadium'] = kicks.apply(lambda x: [x['Opp'],x['Tm']][x['Home']], axis='columns')
 
